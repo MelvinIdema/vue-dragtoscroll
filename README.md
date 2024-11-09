@@ -28,20 +28,20 @@ yarn add vue-dragtoscroll
 Just import the composable:
 ```jsx
 <script setup>
-import useDragToScroll from "vue-dragtoscroll"
+import { useDragToScroll } from "vue-dragtoscroll"
 </script>
 ```
 Add your ref:
 ```jsx
 <script setup>
-import useDragToScroll from "vue-dragtoscroll"
+import { useDragToScroll } from "vue-dragtoscroll"
 const yourScrollContainer = ref(null)
 </script>
 ```
 And run the composable:
 ```jsx
 <script setup>
-import useDragToScroll from "vue-dragtoscroll"
+import { useDragToScroll } from "vue-dragtoscroll"
 const yourScrollContainer = ref(null)
 const { isDragging } = useDragToScroll(yourScrollContainer)
 </script>

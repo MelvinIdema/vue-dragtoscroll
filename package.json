@@ -2,7 +2,7 @@
   "name": "vue-dragtoscroll",
   "type": "module",
   "version": "1.0.0",
-  "description": "Vue 3 composition API for drag to scroll",
+  "description": "A Vue 2 & 3 composition API for drag to scroll.",
   "author": "Melvin Idema",
   "license": "MIT",
   "homepage": "https://github.com/melvinidema/vue-dragtoscroll",

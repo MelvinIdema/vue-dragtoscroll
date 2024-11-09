@@ -1,0 +1,49 @@
+{
+  "name": "vue-dragtoscroll",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Vue 3 composition API for drag to scroll",
+  "author": "Melvin Idema",
+  "license": "MIT",
+  "homepage": "https://github.com/melvinidema/vue-dragtoscroll",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melvinidema/vue-dragtoscroll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/melvinidema/vue-dragtoscroll/issues"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "composition-api",
+    "drag",
+    "scroll"
+  ],
+  "files": ["dist"],
+  "main": "dist/useDragtoScroll.umd.cjs",
+  "module": "dist/useDragtoScroll.js",
+  "types": "dist/useDragtoScroll.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/useDragtoScroll.js",
+      "require": "./dist/useDragtoScroll.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.12",
+    "vue-demi": "^0.14.10"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vue-tsc": "^2.1.8"
+  }
+}

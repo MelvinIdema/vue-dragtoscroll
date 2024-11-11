@@ -1,5 +1,5 @@
 import type { MaybeRefOrGetter } from 'vue-demi'
-import { onMounted, onUnmounted, computed, ref, toValue } from 'vue-demi'
+import { onMounted, onUnmounted, computed, ref, toValue, getCurrentInstance } from 'vue-demi'
 
 export interface useDragScrollOptions {
   /**
@@ -211,22 +211,27 @@ export function useDragToScroll(
     handleEvent(event)
   }
 
-  onMounted(() => {
+  const setup = () => {
     if (isClient) {
       styling.init()
       const scrollContainer = toValue(target)
       scrollContainer?.addEventListener('pointerdown', start, eventListenerConfig)
     }
-  })
+  }
 
-  onUnmounted(() => {
+  const cleanup = () => {
     styling.remove()
     if (animationFrameId !== null) {
       cancelAnimationFrame(animationFrameId)
     }
     const scrollContainer = toValue(target)
     scrollContainer?.removeEventListener('pointerdown', start, eventListenerConfig)
-  })
+  }
 
-  return { isDragging: computed(() => isDragging.value) }
+  if (getCurrentInstance()) {
+    onMounted(setup)
+    onUnmounted(cleanup)
+  }
+
+  return { isDragging: computed(() => isDragging.value), setup, cleanup }
 }

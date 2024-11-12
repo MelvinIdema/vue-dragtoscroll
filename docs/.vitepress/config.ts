@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/vue-dragtoscroll/',
   title: "VueDragToScroll",
   description: "A Vue composable for drag to scroll.",
   themeConfig: {

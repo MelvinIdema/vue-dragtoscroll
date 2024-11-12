@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useDragToScroll from './../lib/main';
+import { useDragToScroll } from './../lib/main';
 import { ref } from 'vue';
 
 const scrollContainer = ref<HTMLElement | null>(null);
@@ -16,6 +16,12 @@ const showAlert = (i: number) => {
       {{ i }}
     </div>
   </div>
+  
+  <div v-drag-to-scroll class="container directive">
+    <div v-for="i in 20" :key="i" class="container-item" @click="!isDragging && showAlert(i)">
+      {{ i }}
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -23,6 +29,10 @@ const showAlert = (i: number) => {
   display: flex;
   flex-wrap: nowrap;
   width: 56rem;
+}
+
+.directive {
+  margin-top: 2rem;
 }
 
 .container-item {
@@ -35,5 +45,10 @@ const showAlert = (i: number) => {
   place-items: center;
   font-size: 3rem;
   user-select: none;
+}
+
+.directive .container-item {
+  background-color: #c4e89e;
+  border: 1px solid #6f8559;
 }
 </style>

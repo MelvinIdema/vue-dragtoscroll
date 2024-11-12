@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/vue-dragtoscroll/',
   title: "VueDragToScroll",
   description: "A Vue composable for drag to scroll.",
+  appearance: 'dark',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

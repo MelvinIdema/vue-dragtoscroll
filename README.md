@@ -25,26 +25,30 @@ yarn add vue-dragtoscroll
 
 ## How to use
 
-Just import the composable:
+### Composable
+The preferable usage of vue-dragtoscroll is with a composable. The composable allows you to tweak a lot of settings and check if the user is dragging or not for your click events.
 ```jsx
 <script setup>
-import { useDragToScroll } from "vue-dragtoscroll"
+  import { useDragToScroll } from "vue-dragtoscroll"
+  const yourScrollContainer = ref(null)
+  const { isDragging } = useDragToScroll(yourScrollContainer)
 </script>
+
+<template>
+  <div ref="scrollContainer" />
+</template>
 ```
-Add your ref:
+
+### Directive
+If you just require a super simple implementation that just works out of the box and don't mind about event propagation and such. You can use this v-directive.
 ```jsx
 <script setup>
-import { useDragToScroll } from "vue-dragtoscroll"
-const yourScrollContainer = ref(null)
+  import { dragToScroll: vDragToScroll } from "vue-dragtoscroll"
 </script>
-```
-And run the composable:
-```jsx
-<script setup>
-import { useDragToScroll } from "vue-dragtoscroll"
-const yourScrollContainer = ref(null)
-const { isDragging } = useDragToScroll(yourScrollContainer)
-</script>
+
+<template>
+  <div v-drag-to-scroll ref="scrollContainer" />
+</template>
 ```
 
 ## Contributing

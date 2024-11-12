@@ -1,5 +1,5 @@
 import type { MaybeRefOrGetter } from 'vue-demi'
-import { onMounted, onUnmounted, computed, ref, toValue, getCurrentInstance } from 'vue-demi'
+import { onMounted, onUnmounted, computed, ref, toValue, getCurrentInstance, watchEffect } from 'vue-demi'
 
 export interface useDragScrollOptions {
   /**
@@ -157,8 +157,9 @@ export function useDragToScroll(
 
   const animate = () => {
     if (Math.abs(velocity.x) > 0.01 || Math.abs(velocity.y) > 0.01) {
-      velocity.x *= friction
-      velocity.y *= friction
+      const frict = toValue(friction)
+      velocity.x *= frict
+      velocity.y *= frict
       const scrollContainer = toValue(target)
       if (scrollContainer) {
         scrollContainer.scrollLeft -= velocity.x
@@ -184,8 +185,9 @@ export function useDragToScroll(
       const deltaY = lastPos.y - prevPos.y
       const deltaTime = lastPos.time - prevPos.time
       if (deltaTime !== 0) {
-        velocity.x = (deltaX / deltaTime) * velocityMultiplier
-        velocity.y = (deltaY / deltaTime) * velocityMultiplier
+        const multiplier = toValue(velocityMultiplier)
+        velocity.x = (deltaX / deltaTime) * multiplier
+        velocity.y = (deltaY / deltaTime) * multiplier
       }
       animate()
       onEnd?.(event)
@@ -228,10 +230,12 @@ export function useDragToScroll(
     scrollContainer?.removeEventListener('pointerdown', start, eventListenerConfig)
   }
 
-  if (getCurrentInstance()) {
-    onMounted(setup)
-    onUnmounted(cleanup)
-  }
+  watchEffect(() => {
+    if (toValue(target) !== null) {
+      cleanup()
+      setup();
+    }
+  })
 
   return { isDragging: computed(() => isDragging.value), setup, cleanup }
 }

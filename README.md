@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-  <a href="https://github.com/unovue/radix-vue">
+  <a href="https://melvinidema.github.io/vue-dragtoscroll">
     <img src="./docs/assets/VueDragToScroll-logo-v1.svg" alt="Logo" width="100" />
   </a>
 
@@ -8,7 +8,7 @@
 VueDragToScroll
 </h1>
 <p align="center">
-A Vue 2 & 3 composition API for drag to scroll.<br>
+A Vue 2 & 3 compatible composable for drag to scroll.<br>
 VueDragToScroll is a minimal styled, configurable Vue composable to easily implement drag scroll.
 <p>
 
@@ -16,6 +16,10 @@ VueDragToScroll is a minimal styled, configurable Vue composable to easily imple
 </a>
 <a href="https://www.npmjs.com/package/vue-dragtoscroll" target="__blank"><img src="https://img.shields.io/npm/v/vue-dragtoscroll?style=flat&colorA=002438&colorB=41c399" alt="NPM version"></a>
 <a href="https://www.npmjs.com/package/vue-dragtoscroll" target="__blank"><img alt="NPM Downloads" src="https://img.shields.io/npm/dm/vue-dragtoscroll?flat&colorA=002438&colorB=41c399"></a>
+</p>
+
+<p align="center">
+  <a href="https://melvinidema.github.io/vue-dragtoscroll"><b>Documentation</b></a>
 </p>
 
 ## Installation

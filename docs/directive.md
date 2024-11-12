@@ -8,7 +8,7 @@ This means that it's recommended to not use any events inside the scroll contain
 ## Demo
 <script setup>
 import { ref } from "vue";
-import { dragToScroll } from "vue-dragtoscroll";
+import { dragToScroll } from "../lib/main";
 const vDragToScroll = dragToScroll;
 
 const showAlert = (i) => i === 3 && alert(i);

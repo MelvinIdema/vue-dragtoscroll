@@ -5,7 +5,7 @@ The composable enables you to configure the drag to scroll behavior to your own 
 ## Demo
 <script setup>
 import { ref } from "vue";
-import { useDragToScroll } from "vue-dragtoscroll";
+import { useDragToScroll } from "../lib/main";
 const scrollContainer = ref(null);
 const { isDragging } = useDragToScroll(scrollContainer);
 

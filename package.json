@@ -23,9 +23,9 @@
   "files": [
     "dist"
   ],
-  "main": "dist/useDragtoScroll.umd.cjs",
-  "module": "dist/useDragtoScroll.js",
-  "types": "dist/useDragtoScroll.d.ts",
+  "main": "./dist/useDragtoScroll.umd.cjs",
+  "module": "./dist/useDragtoScroll.js",
+  "types": "./dist/useDragtoScroll.d.ts",
   "exports": {
     ".": {
       "import": "./dist/useDragtoScroll.js",

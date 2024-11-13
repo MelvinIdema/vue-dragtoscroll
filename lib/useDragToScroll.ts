@@ -173,6 +173,8 @@ export function useDragToScroll(
   }
 
   const end = (event: PointerEvent) => {
+    isDragging.value = false
+    
     window?.removeEventListener('pointermove', move, eventListenerConfig)
     window?.removeEventListener('pointerup', end, eventListenerConfig)
     styling.release()
@@ -198,7 +200,6 @@ export function useDragToScroll(
   }
 
   const start = (event: PointerEvent) => {
-    isDragging.value = false
     const scrollContainer = toValue(target)
     position.value = {
       top: scrollContainer ? scrollContainer.scrollTop : 0,
